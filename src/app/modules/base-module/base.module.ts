@@ -5,10 +5,6 @@ import { BaseComponent } from './base/base.component';
 import { ConverterComponent } from './converter/converter.component';
 import { MaterialModule } from '../material/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CommonModule } from '@angular/common';
-import { BrowserModule } from '@angular/platform-browser';
-import { provideAnimations } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -19,12 +15,10 @@ import { provideAnimations } from '@angular/platform-browser/animations';
   imports: [
     BaseRoutingModule,
     MaterialModule,
-    FormsModule,
     ReactiveFormsModule,
-    CommonModule
+    FormsModule,
   ],
   providers:[
-    provideAnimations(),
   ]
 })
 export class BaseModule { }
