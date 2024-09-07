@@ -6,6 +6,10 @@
 }
 
 .converter-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     height: 20rem;
     width: 60rem;
     border: 5px solid #193e2c;
@@ -14,15 +18,17 @@
 }
 
 .converter-fields-container{
-    width: 30rem;
+    width: 35%;
     height: 5rem;
     display: flex;
     flex-direction: row;
     align-items: center;
+    margin-left: 2rem;
+    margin-bottom: 2rem;
 }
 
 .select-currency{
-    width: 3.5rem;
+    width: 4.5rem;
     height: 2.5rem;
 }
 
@@ -35,21 +41,42 @@ select{
     border: none;
     background: none;
     font-weight: bold;
-    margin-top: 1.5rem;
+    font-size: 1.25rem;
     &:focus-visible{
         outline: none;
     }
 }
 
+.swap-button-container{
+  margin-bottom: 1rem;
+  position: relative;
+  width: fit-content;
+  height: fit-content;
+}
+
+.swap-button-img{
+  width: 100%;
+  height: 100%;
+}
+
+.swap-button{
+  width: fit-content;
+  height: fit-content;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.swap-button-img{
+  width: 2.5rem;
+}
 
 
 
 .form__group {
   position: relative;
   padding: 15px 0 0;
-  margin-top: 1rem;
-  margin-left: 2rem;
-  width: 40%;
+  width: 70%;
 }
 
 .form__field {
@@ -58,7 +85,7 @@ select{
   border: 0;
   border-bottom: 0.2rem solid #193e2c;
   outline: 0;
-  font-size: 1.3rem;
+  font-size: 1.6rem;
   color: #193e2c;
   padding: 7px 0;
   background: transparent;
