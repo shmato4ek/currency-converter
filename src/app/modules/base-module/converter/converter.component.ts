@@ -1,7 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { CurrencyRate } from '../../../models/currency-rate';
-import { Currency } from '../../../models/enums/currency';
-import { CurrencyRatesResponse } from '../../../models/currency-rates-response';
 import { CurrencyService } from '../../../services/currency.service';
 import { CurrencyRateModel } from '../../../models/currency-rate-model';
 import { environment } from '../../../../environments/environment';
@@ -92,5 +89,4 @@ export class ConverterComponent implements OnInit{
 
     return isValid;
   }
-
 }

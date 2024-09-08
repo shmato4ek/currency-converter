@@ -5,7 +5,6 @@ import { BaseComponent } from './base/base.component';
 import { ConverterComponent } from './converter/converter.component';
 import { MaterialModule } from '../material/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { provideHttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { ValidationHelper } from '../../helpers/validation-helper';
 

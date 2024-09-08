@@ -168,11 +168,11 @@ select{
   border-width: 3px;
   border-image-slice: 1;
 }
-/* reset input */
+
 .form__field{
   &:required,&:invalid { box-shadow:none; }
 }
-/* demo */
+
 body {
   font-family: 'Poppins', sans-serif; 
   display: flex;
