@@ -1,27 +1,19 @@
-# CurrencyConverter
+## ECurrency
+Ecurrency is a website where you can find out the current exchange rate (UAH, USD, EUR) and convert the amount from one currency to another
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.3.
+### Technologies and tools
+This project was created using the following technologies:
+- Angular (v. 18.2)
+- Node (v. 20.16)
+- TypeScript (v. 5.5)
 
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+### Startup
+To run the project, you need to have NodeJS, npm and AngularCLI installed. Then you need to run the following commands in your terminal (in project root directory):
+```
+npm i
+ng serve
+```
+### Preview
+![main page](/preview-images/image.png)
+![convertion example](/preview-images/image1.png)
+![validation example](/preview-images/image2.png)
