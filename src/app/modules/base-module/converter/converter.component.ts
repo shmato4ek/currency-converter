@@ -81,7 +81,7 @@ export class ConverterComponent implements OnInit{
 
     if(!isValid) {
       this.isActiveErrorMessage = true;
-      this.errorMessage = 'Amount value is not correct!';
+      this.errorMessage = 'Only digits can be inputed!';
     } else {
       this.isActiveErrorMessage = false;
       this.errorMessage = '';
