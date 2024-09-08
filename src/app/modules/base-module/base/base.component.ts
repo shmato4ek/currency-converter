@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { CurrencyService } from '../../../services/currency.service';
+import { CurrencyRateModel } from '../../../models/currency-rate-model';
 
 @Component({
   selector: 'app-base',
@@ -7,5 +9,9 @@ import { Component } from '@angular/core';
 })
 
 export class BaseComponent {
+  currencies = [] as CurrencyRateModel[];
 
+  constructor(currencyService: CurrencyService) {
+    this.currencies = currencyService.getCurrencyRates();
+  }
 }

@@ -3,8 +3,8 @@
     flex-direction: row;
     width: 100%;
     height: 5rem;
-    background-color: #193e2c;
-    border-bottom: 5px solid #C4F3DF;
+    background-color: #800000;
+    border-bottom: 5px solid #DAD4B5;
     align-items: center;
     position: relative;
 }
@@ -12,20 +12,26 @@
 .header-name{
     font-size: 2rem;
     font-weight: bold;
-    color: #C4F3DF;
+    color: #F2E8C6;
     margin-left: 2rem;
 }
 
 .header-currency-container{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     position: absolute;
-    right: 2rem;
+    right: 5rem;
 }
 
 .header-currency{
     margin-block-start: 0.25rem;
     margin-block-end: 0.25rem;
-    color: #C4F3DF;
+    color: #F2E8C6;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.mr2{
+    margin-right: 2rem;
 }
 

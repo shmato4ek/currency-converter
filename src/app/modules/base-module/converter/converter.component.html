@@ -1,37 +1,74 @@
 <div class="converter-page-container">
+  
     <div class="converter-container">
-      <div class="converter-fields-container">
-        <div class="form__group field">
-          <input type="input" class="form__field" placeholder="Name" name="name" id='name' required [value]="firstValue"/>
-          <label for="name" class="form__label">Ammount</label>
+      <div
+        class="inputs-container"
+        *ngIf="baseAmount && targetAmount">
+        <div class="converter-fields-container">
+          <div class="form__group field">
+            <input
+              type="input"
+              class="form__field"
+              id='amount'
+              [(ngModel)]="baseAmount"
+              (ngModelChange)="onAmountChange('base')"
+              (keypress)="onKeyInput($event)"/>
+
+            <label for="amount" class="form__label">Base amount</label>
+          </div>
+          <img class="currency-flag" src="assets/images/{{selectedBaseCurrency}}.png">
+
+          <select
+            class="select-currency"
+            [(ngModel)]="selectedBaseCurrency"
+            (ngModelChange)="updateCurrentCurrency()">
+            
+            <option *ngFor="let option of currentCurrenciesNames">
+              {{option}}
+            </option>
+          </select>
         </div>
 
-        <select class="select-currency">
-          <option>UAH</option>
-          <option>USD</option>
-          <option>EUR</option>
-        </select>
-      </div>
-
-      <div class="swap-button-container">
-        <button class="swap-button">
-          <img
-            src="../../../../assets/swap-icon.png"
-            class="swap-button-img">
-        </button>
-      </div>
-      
-      <div class="converter-fields-container">
-        <div class="form__group field">
-          <input type="input" class="form__field" placeholder="Name" name="name" id='name' required [value]="secondValue"/>
-          <label for="name" class="form__label">Ammount</label>
+        <div class="swap-button-container">
+          <button
+            class="swap-button"
+            (click)="swapCurrencies()">
+            <img
+              src="assets/images/swap-icon.png"
+              class="swap-button-img">
+          </button>
         </div>
+        
+        <div class="converter-fields-container">
+          <div class="form__group field">
+            <input
+              type="input"
+              class="form__field"
+              id='amount'
+              [(ngModel)]="targetAmount"
+              (ngModelChange)="onAmountChange('target')"
+              (keypress)="onKeyInput($event)"/>
 
-        <select class="select-currency">
-          <option>UAH</option>
-          <option>USD</option>
-          <option>EUR</option>
-        </select>
+            <label for="amount" class="form__label">Target amount</label>
+          </div>
+
+          <img class="currency-flag" src="assets/images/{{selectedTargetCurrency}}.png">
+
+          <select
+            class="select-currency"
+            [(ngModel)]="selectedTargetCurrency"
+            (ngModelChange)="updateCurrentCurrency()"
+            >
+
+            <option *ngFor="let option of currentCurrenciesNames">
+              {{option}}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div class="error-container">
+        <p class="error-text" *ngIf="isActiveErrorMessage">{{errorMessage}}</p>
       </div>
     </div>
 </div>

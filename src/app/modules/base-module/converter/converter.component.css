@@ -7,14 +7,23 @@
 
 .converter-container{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 20rem;
-    width: 60rem;
-    border: 5px solid #193e2c;
+    width: 70rem;
+    border: 5px solid #800000;
     border-radius: 10px;
-    background-color: #B9E0CF;
+    background-color: #F2E8C6;
+}
+
+.inputs-container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 7rem;
+  width: 100%;
 }
 
 .converter-fields-container{
@@ -41,14 +50,21 @@ select{
     border: none;
     background: none;
     font-weight: bold;
+    color: #800000;
     font-size: 1.25rem;
+    margin-top: 1rem;
     &:focus-visible{
         outline: none;
+    }
+    option{
+      border: none;
+      background-color: #F2E8C6;
     }
 }
 
 .swap-button-container{
   margin-bottom: 1rem;
+  margin-left: 1.75rem;
   position: relative;
   width: fit-content;
   height: fit-content;
@@ -71,7 +87,35 @@ select{
   width: 2.5rem;
 }
 
+.converted-currency-text{
+  font-size: 1.5rem;
+}
 
+.converted-currency-container{
+  margin-top: 1rem;
+  margin-right: 0.5rem;
+}
+
+.error-container{
+  margin-left: 13%;
+  width: 87%;
+  text-align: start;
+  min-height: 1.5rem;
+}
+
+.error-text{
+  font-size: 1.25rem;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  color: red;
+}
+
+.currency-flag{
+  height: 1.5rem;
+  margin-top: 1rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
 
 .form__group {
   position: relative;
@@ -83,10 +127,10 @@ select{
   font-family: inherit;
   width: 100%;
   border: 0;
-  border-bottom: 0.2rem solid #193e2c;
+  border-bottom: 0.2rem solid #800000;
   outline: 0;
   font-size: 1.6rem;
-  color: #193e2c;
+  color: #800000;
   padding: 7px 0;
   background: transparent;
   transition: border-color 0.2s;
@@ -108,7 +152,7 @@ select{
   display: block;
   transition: 0.2s;
   font-size: 1rem;
-  color: #193e2c;
+  color: #800000;
 }
 
 .form__field:focus {
@@ -118,7 +162,7 @@ select{
     display: block;
     transition: 0.2s;
     font-size: 1rem;
-    color: #193e2c;
+    color: #800000;
   }
   padding-bottom: 6px;  
   border-width: 3px;
@@ -137,5 +181,5 @@ body {
   align-items: center;
   min-height: 100vh;
   font-size: 1.5rem;
-  background-color:#193e2c;
+  background-color:#800000;
 }

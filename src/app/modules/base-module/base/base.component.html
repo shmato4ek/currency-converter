@@ -1,5 +1,5 @@
 <div>
-    <app-header></app-header>
+    <app-header [currencies]="currencies"></app-header>
 </div>
 
 <div>
@@ -8,5 +8,5 @@
             Currency converter
         </p>
     </div>
-    <router-outlet></router-outlet>
+    <app-converter [currencies]="currencies"></app-converter>
 </div>

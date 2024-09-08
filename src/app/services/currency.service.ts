@@ -10,32 +10,35 @@ import { CurrencyRateModel } from "../models/currency-rate-model";
 })
 
 export class CurrencyService extends ResourceService<CurrencyRatesResponse> {
-    private readonly baseCurrency = environment.baseCurrency;
-    private readonly additionalCurrencies = environment.additionalCurrencies;
+    private allCurrencies = [] as CurrencyRateModel[];
 
     public getCurrencyRates() {
-        let currencies = [] as CurrencyRateModel[];
-        let currencySymbols = this.currencyArrayToString(this.additionalCurrencies);
+        const currentCurrencies = environment.currencies;
 
-        this.getBaseCurrencies(currencySymbols)
-            .subscribe(resp => {
-                let rates = Object.keys(resp.rates);
-                rates.forEach(rateName => {
-                    let currencyModel: CurrencyRateModel = {
-                        baseCurrency: environment.baseCurrency,
-                        targetCurrency: rateName,
-                        rate: resp.rates[rateName]
-                    }
+        currentCurrencies.forEach(currency => {
+            const targetCurrencies = currentCurrencies.filter(c => c != currency);
+            const currencySymbols = this.currencyArrayToString(targetCurrencies);
 
-                    currencies.push(currencyModel);
+            this.getCurrencies(currency, currencySymbols)
+                .subscribe(resp => {
+                    let rates = Object.keys(resp.rates);
+                    rates.forEach(rateName => {
+                        let currencyModel: CurrencyRateModel = {
+                            baseCurrency: currency,
+                            targetCurrency: rateName,
+                            rate: resp.rates[rateName]
+                        }
+
+                        this.allCurrencies.push(currencyModel);
+                    });
                 });
-                console.log(currencies);
-                return currencies;
-            })
+        });
+
+        return this.allCurrencies;
     }
 
-    private getBaseCurrencies(currencySymbols: string) {
-        return this.getCurrency(this.baseCurrency, currencySymbols)
+    private getCurrencies(baseCurrency: string, targetCurrencies: string) {
+        return this.getCurrency(baseCurrency, targetCurrencies)
             .pipe(
                 map((resp) => {
                     return resp.body as CurrencyRatesResponse;
